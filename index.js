@@ -15,6 +15,8 @@ app.post('/upload', async (req, res) => {
     if (!image_urls_combined) {
       return res.status(400).json({ error: 'Missing image_urls_combined' });
     }
+  console.log('📩 /upload endpoint was hit!');
+
 
     const credentialsPath = path.join(__dirname, 'service-account.json');
     const credentials = JSON.parse(fs.readFileSync(credentialsPath, 'utf-8'));
